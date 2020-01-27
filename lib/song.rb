@@ -12,4 +12,17 @@ class Song
   end 
   
   def self.new_by_filename
-    
+    p song_name 
+    artist, song = song_name.split(' - ')
+    artist = Artist.new(artist)
+    song = Song.new(song)
+    song.artist = artist 
+    song 
+  end 
+  
+  def artist_name(name)
+    self.artist = Artist.find_or_create_by_name
+  end 
+  
+end 
+ 
